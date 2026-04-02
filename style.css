@@ -4368,69 +4368,118 @@ html[dir="rtl"] .pay-option{direction:rtl !important; text-align:right !importan
   }
 }
 
-/* ==================== REPLACE WHATSAPP STICKY WITH CART ==================== */
+/* ==================== SAFE ACTIONS FIX - KEEP CART + LANGUAGE VISIBLE ==================== */
+/* Forget floating cart. Keep both buttons visible in portrait and landscape. */
 
-/* hide old sticky WhatsApp button */
-.floating-wa{
-  display:none !important;
-}
-
-/* keep language selector normal */
-.actions{
-  display:flex !important;
-  align-items:center !important;
-  gap:10px !important;
-}
-
-.actions .lang-select{
-  position:static !important;
-  width:auto !important;
-  min-width:110px !important;
-  z-index:auto !important;
-}
-
-/* make cart button behave like old sticky WhatsApp */
-@media (max-width: 900px){
-  body{
-    padding-bottom:78px !important;
+@media (max-width: 900px) {
+  body {
+    padding-bottom: 0 !important;
   }
 
-  .actions .cart-btn{
-    position:fixed !important;
-    left:12px !important;
-    right:12px !important;
-    bottom:12px !important;
-    z-index:999999 !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    min-height:48px !important;
-    border-radius:999px !important;
-    background:#ff3f93 !important;
-    color:#fff !important;
-    font-weight:800 !important;
-    box-shadow:0 14px 30px rgba(0,0,0,.35) !important;
-    border:none !important;
+  .actions {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
   }
 
-  .actions .cart-btn #cartCount{
-    top:50% !important;
-    transform:translateY(-50%) !important;
-    inset-inline-end:14px !important;
-    min-width:28px !important;
-    height:28px !important;
-    box-shadow:0 8px 18px rgba(255,63,147,.32), 0 0 0 2px #fff !important;
+  .actions .lang-select,
+  .actions .cart-btn {
+    position: static !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    border-radius: 999px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .actions .lang-select {
+    background: #111 !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.09) !important;
+  }
+
+  .actions .cart-btn {
+    background: #fff !important;
+    color: #000 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .actions .cart-btn #cartCount {
+    position: absolute !important;
+    top: -9px !important;
+    inset-inline-end: -8px !important;
+    transform: none !important;
+    min-width: 26px !important;
+    height: 26px !important;
+  }
+
+  .topbar-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .nav {
+    width: 100% !important;
+    order: 3 !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    overflow: visible !important;
   }
 }
 
-@media (max-width: 430px){
-  .actions .cart-btn{
-    left:10px !important;
-    right:10px !important;
-    bottom:10px !important;
-    min-height:46px !important;
-    font-size:14px !important;
+@media (max-width: 480px) {
+  .actions {
+    gap: 8px !important;
+  }
+
+  .actions .lang-select,
+  .actions .cart-btn {
+    min-height: 40px !important;
+    padding: 9px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .brand {
+    font-size: 24px !important;
+  }
+}
+
+/* Landscape phones: keep header clean and usable */
+@media (max-width: 900px) and (orientation: landscape) {
+  .topbar {
+    top: 40px !important;
+  }
+
+  .topbar-inner {
+    min-height: 64px !important;
+  }
+
+  .nav {
+    gap: 12px !important;
+  }
+
+  .products,
+  .accessory-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 14px !important;
   }
 }
