@@ -543,7 +543,7 @@
         isNew:false
       },
       {
-        id:27,
+        id:32,
         type:"accessory",
         category:"bags",
         name:{en:"Mini Shoulder Bag",he:"תיק כתף קטן",ar:"شنطة كتف صغيرة",ru:"Мини-сумка через плечо"},
@@ -556,7 +556,7 @@
         isNew:true
       },
       {
-        id:28,
+        id:33,
         type:"accessory",
         category:"earrings",
         name:{en:"Pearl Drop Earrings",he:"עגילי פנינה נופלים",ar:"حلق لؤلؤ نازل",ru:"Серьги-капли с жемчугом"},
