@@ -4594,3 +4594,172 @@ html[dir="rtl"] .pay-option{direction:rtl !important; text-align:right !importan
     border-radius:12px !important;
   }
 }
+
+/* ==================== FINAL UI TUNE 2 ==================== */
+
+/* Keep header controls a little lower so they do not hide the Poster logo */
+@media (max-width: 900px) {
+  .topbar-inner{
+    align-items: flex-start !important;
+    row-gap: 10px !important;
+  }
+
+  .actions{
+    margin-top: 6px !important;
+    align-self: flex-start !important;
+  }
+
+  .actions .lang-select,
+  .actions .cart-btn{
+    min-height: 42px !important;
+    padding: 10px 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .actions{
+    margin-top: 8px !important;
+  }
+
+  .brand{
+    font-size: 22px !important;
+  }
+
+  .mark{
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* Big sale / deal area: every button balanced and same size */
+.deal-box-grid{
+  align-items: stretch !important;
+}
+
+.deal-cta,
+.deal-mini{
+  height: 100% !important;
+}
+
+.deal-cta{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  min-height: 100% !important;
+}
+
+.deal-cta .btn,
+.deal-mini-body .mini-open{
+  width: 100% !important;
+  min-height: 44px !important;
+  height: 44px !important;
+  border-radius: 14px !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+}
+
+.deal-mini-body{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+}
+
+/* Cards: make photo dominant */
+.card,
+.accessory-card{
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.card-media,
+.accessory-media{
+  aspect-ratio: 4 / 5.2 !important;
+}
+
+.card-body,
+.accessory-body{
+  padding: 12px 14px 14px !important;
+}
+
+.card h3,
+.accessory-card h3{
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+  min-height: auto !important;
+  margin-bottom: 6px !important;
+}
+
+.card p,
+.accessory-card p{
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  min-height: auto !important;
+  margin-bottom: 10px !important;
+}
+
+.price-row{
+  margin-bottom: 10px !important;
+}
+
+.card-actions{
+  margin-top: auto !important;
+}
+
+/* Make the cart button pink again */
+.actions .cart-btn{
+  background: linear-gradient(135deg, #ff3f93, #ff6faf) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  border:none !important;
+  box-shadow:0 10px 24px rgba(255,63,147,.28) !important;
+}
+
+/* Mobile cards and deal buttons */
+@media (max-width: 900px){
+  .card-media,
+  .accessory-media{
+    aspect-ratio: 4 / 5.4 !important;
+  }
+
+  .card-body,
+  .accessory-body{
+    padding: 10px 12px 12px !important;
+  }
+
+  .deal-box-grid{
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .deal-cta .btn,
+  .deal-mini-body .mini-open{
+    min-height: 42px !important;
+    height: 42px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Landscape mobile: keep everything even and aligned */
+@media (max-width: 900px) and (orientation: landscape){
+  .topbar-inner{
+    align-items: center !important;
+  }
+
+  .actions{
+    margin-top: 0 !important;
+  }
+
+  .deal-box-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .card-media,
+  .accessory-media{
+    aspect-ratio: 4 / 4.8 !important;
+  }
+}
